@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>new</title>
+		<link rel="stylesheet" href="../static/new.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+			integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+			crossorigin="anonymous"
+		/>
+	</head>
+	<body style="background-color:#2B4066">
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+			integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+			crossorigin="anonymous"
+		></script>
+		<!-- modal 0 -->
+			<div class="modal fade" id="exampleModal0" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">Add New Todo:</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+					<form>
+						<div class="mb-3">
+							<label for="recipient-name" class="col-form-label">Enter your Todo name.</label>
+							<input type="text" id="todoname" name="todoname" class="form-control" >
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-success" formaction="/add_todo" formmethod="POST">Add Todo</button>
+					</form>
+					</div>
+					</div>
+				</div>
+			</div>
+		<!-- khtm 0 -->
+		<!-- modal 1 -->
+			<div class="modal fade" id="exampleModal1" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalToggleLabel">Delete Confirmation</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						This will permanently delete your todo. Do you want to Continue.
+					</div>
+					<div class="modal-footer">
+						<form>
+							<button type="submit" formaction="{{url_for('views.delete_todo', id = todoid.todo_id)}}" formmethod="post" class="btn btn-danger">Delete</button>
+						</form>
+					</div>
+					</div>
+				</div>
+			</div>
+		<!-- khtm 1 -->
+		<!-- modal 2 -->
+			<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">Add New Task</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form>
+						<div class="mb-3">
+							<label for="recipient-name" class="col-form-label">Task Name:</label>
+							<input type="text"  name="taskname"  id="taskname" class="form-control">
+						</div>
+						<div class="mb-3">
+							<label for="message-text" class="col-form-label">Task Description:</label>
+							<textarea   name="taskdesc"  id="taskdesc"    class="form-control" ></textarea>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						    <button type="submit"  formaction="/add_task/{{todoid.todo_id}}" formmethod="post" class="btn btn-success">Add Task</button>
+					    </form>
+					</div>
+					</div>
+				</div>
+				</div>
+		<!-- khtm 2 -->
+		<!-- modal 3 -->
+			<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+				<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+					<h1 class="modal-title fs-5" id="staticBackdropLabel">Log Out Confirmation</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						Do you want to exit the application
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<form>
+					    <button type="submit" formaction="/logout"  class="btn btn-danger">Logout</button>
+				    </form>
+					</div>
+				</div>
+				</div>
+			</div>
+		<!-- khtm 3 -->
+			<nav class="navbr">
+				<form>
+					<label class="first"
+						><i id="icon" class="bx bx-user-circle" style="font-size: 23px"></i
+						>&nbsp{{user.user_name}}</label
+					>
+					<label class="third">To-do List App </label>
+					<label class="second">To-do List App </label>
+					<p>		
+					<button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal0">
+						<i
+							class="bx bxs-plus-square"
+							style="font-size: larger; color: #a4508b; font-weight: 300"
+						></i>
+					</button>
+					&nbsp
+					<button  type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i  style="color: #ffffff;font-size: larger;"  class='bx bx-log-out'></i></button>
+					</p>
+			    </form>
+			</nav>
+            <div>   
+			<div style="display: flex; height: 100vh">
+				<div style="background-image: linear-gradient(45deg, #243b55 , #141e30 );">
+					<input type="checkbox" id="check" name="" value="" />
+					<label for="check"><i id="checkbtn" class="fa fa-bars"></i></label>
+					<ul class="side-bar-links">
+						{% for i in todo %}
+						<li>
+							<form>
+							<button
+								type="submit"
+								formaction="/todo_click/{{i.todo_id}}"
+								formmethod="POST"
+								id="side-bar-btn"
+							>
+								<p class="headerp">
+									<i class="bx bx-task" style="color: #ffffff"></i>&nbsp{{i.todo_name}}
+								</p>
+							</button>
+						    </form>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+
+				<!-- main -->
+				<!-- <button class='btn-add-new'>Add New Task</button> -->
+				<div class="main">
+					<div class="todo-box">
+						<div class="todo-header" style="color: #FFFFFF; background-image: linear-gradient(20deg, #000000, #434343);">
+							<p><input type="text" class="edit_todo_name" value="{{todoid.todo_name}}" name="newname" id="newname" readonly></p>
+							<div class="todo-actions">
+								<button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal3" class="success">	
+									<i class="bx bx-plus" style="font-size: 18px"></i>
+								</button>
+								<button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1"  class="fail">
+									<i class="bx bxs-trash" style="font-size: 18px"></i>
+								</button>
+								<button type="submit" formaction="" class="retry" onclick="edit_name_js('{{todoid.todo_id}}')">
+									Edit
+								</button>
+							</div>
+						</div>
+
+						<div class="todo-content" style="overflow-y: scroll; overflow-x: hidden;">
+							<ul>
+							{% for task in task %}	
+								<li class="display: flex; gap: 0.25rem;">
+									<input  type="checkbox"  class="check1" onclick="update_task_js('{{task.task_id}}','{{task.task_status}}')"  />
+										<label class="post" for="check1" style="font-size: 17px;line-height: 35px; font-weight: bolder;">{{task.task_name}}
+										    <br>	
+										    <p class="read" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">➡️ {{task.task_desc}}</p>
+										    <br>
+										    <button style="font-size: medium; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" onclick="readMore(this)">Read More</button>
+								        </label>		
+									&nbsp
+									&nbsp
+									&nbsp
+									<a href="{{url_for('views.delete_task', id = task.task_id)}}"><i class="bx bxs-trash del-icon"></i></a>
+								</li>
+							{% endfor %}	
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="add-new-task">
+					<span class="close">&times</span>
+					<form action="">
+						<div>
+							<label for="">Task Name</label>
+							<input type="text" name="taskname" id="taskname">
+						</div>
+						<div>
+							<label for="">Task Description</label>
+							<input type="text" name="taskdesc" id="taskdesc">
+						</div>
+						<button type="submit" formaction="/add_task/{{todoid.todo_id}}" formmethod="POST">Add New Task</button>
+					</form>
+				</div>
+			</div>
+			</div>
+		</div>
+		<script src="../static/script.js"></script>
+	</body>
+</html>

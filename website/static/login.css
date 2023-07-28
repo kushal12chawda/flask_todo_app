@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@300&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+    position: fixed;
+    min-height: 100%;
+    min-width: 100%;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;    
+}
+
+
+.conatiner{
+    display: flex;
+    justify-content: center;
+    transform: translateY(+17%);
+    
+}
+
+.login{
+    background-color: rgba(255,255, 255, .5);
+    color: black;
+    padding: 28px 50px 40px 50px;
+    border-radius: 30px;
+    /* backdrop-filter: blur(1px); */
+    /* opacity: .5; */
+    
+    
+}
+
+.login .head{
+    text-align: center;
+    margin-bottom: 35px;
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+.login .username{
+    position: relative;
+    display: grid;
+    gap: 5px;
+    font-size: 20px;
+    width: 350px;
+    
+}
+
+.login .username input{
+    height: 23px;
+    padding: 20px 10px;
+    font-size: 16px;
+    border-bottom: 1px solid black ;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: transparent;
+   
+}
+
+.login .password{
+    margin-top: 29px;
+    display: grid;
+    gap: 5px;
+    font-size: 20px;
+    width: 350px;
+}
+
+.login .password input{
+    height: 23px;
+    padding: 20px 10px;
+    font-size: 16px;
+    border-bottom: 1px solid black ;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: transparent;
+   
+}
+
+
+.login .button{
+    margin-top: 30px ;
+    text-align: center;
+    
+}
+
+.login .button button{
+    padding: 10px 35px 10px 35px;
+    font-size: 17px;
+    border-radius: 20px;
+    border: none;
+    width: 350px;
+    font-weight: bolder;
+}
+
+.login .register{
+    margin-top: 25px;
+    text-align: center;
+}
+
+@media (max-width: 640px) {
+
+	.login {
+		margin: 0 auto;
+		width: 100%;
+        margin-left: -30px;
+	}
+}
+
+
+

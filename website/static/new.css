@@ -1,0 +1,427 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+nav {
+	width: 100%;
+	height: 60px;
+	background-image: linear-gradient(65deg, #141e30 35%, #243b55);
+}
+
+nav p {
+	float: right;
+	line-height: 60px;
+	font-size: 33px;
+	margin-right: 30px;
+}
+
+
+label.first {
+	position: absolute;
+	font-size: 28px;
+	color: white;
+	margin: 0 80px;
+	line-height: 60px;
+	font-family: 'Trebuchet MS';
+}
+
+label.third {
+	display: none;
+	position: absolute;
+	font-size: 28px;
+	color: white;
+	margin: 0 100px;
+	line-height: 60px;
+	font-family: 'Copperplate Gothic Light';
+}
+
+label.second {
+	position: relative;
+	font-size: 28px;
+	color: white;
+	margin-left: 635px;
+	line-height: 60px;
+	font-family: 'Copperplate Gothic Light';
+}
+
+@media (max-width: 983px) {
+	label.second {
+		display: none;
+	}
+	label.first {
+		display: none;
+	}
+	label.third {
+		display: block;
+	}
+}
+
+/* sidebar */
+
+.side-bar {
+	/* float: left; */
+	z-index: 10;
+	height: 100vh;
+	/* change-ing height of slide bar auto tried */
+	width: 15.7rem;
+	background: #21212b;
+	padding: 0.1em 1.5em;
+	/* up left padding */
+	/* background-image: linear-gradient(20deg, #000046, #1CB5E0); */
+	box-shadow: 55px 0 75px -55px black;
+}
+
+.side-bar-links {
+	min-width: 200px;
+}
+
+.side-bar-links li button {
+	color: white;
+	font-weight: 300;
+	text-decoration: none;
+}
+
+#side-bar-btn {
+	position: relative;
+	overflow: hidden;
+	padding: 1px;
+	/* among btn */
+}
+
+#side-bar-btn::after {
+	content: '';
+	display: block;
+	margin-top: 0.5rem;
+	height: 4px;
+	width: 200%;
+	background-color: #2bd576;
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.5s ease;
+}
+
+#side-bar-btn:hover {
+	transform: scaleX(1);
+}
+
+.side-bar-links li p {
+	font-family: 'Bahnschrift';
+	font-size: 1.2rem;
+	margin-top: 2.9rem;
+	color: #ece5f0;
+}
+
+ul {
+	list-style: none;
+	position: relative;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+}
+
+#checkbtn {
+	color: #ece5f0;
+	position: absolute;
+	margin-top: -59px;
+	font-size: 20px;
+	display: none;
+}
+
+#check {
+	display: none;
+}
+
+@media (max-width: 943px) {
+	#checkbtn {
+		display: block;
+		margin-left: 0.5rem;
+	}
+
+	.side-bar-links {
+		margin-left: -400px;
+	}
+
+	#check:checked ~ .side-bar-links {
+		margin-left: 0px;
+		/* margin-top: -28px; */
+		width: 200px;
+		height: auto;
+		background-color: #141e30;
+	}
+
+	#side-bar-btn:hover::after {
+		transform: scaleX(0);
+	}
+}
+
+/* main */
+
+.main {
+	flex: 1;
+	color: aliceblue;
+	width: 100%;
+	padding: 1rem;
+}
+
+.todo-box {
+	margin: 35px auto;
+	border-radius: 25px;
+	/* background-color:brown; */
+    background: linear-gradient(to left,#FFE000, #799F0C);
+	width: 60%;
+}
+
+.todo-header {
+	display: flex;
+	justify-content: left;
+	position: relative;
+	background-color: #272732;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	height: 3.5rem;
+	text-align: left;
+	padding-left: 26px;
+	padding-top: 20px;
+}
+
+.todo-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: 2rem;
+}
+
+
+.todo-header p{
+	color: #ece5f0;
+
+}
+.todo-actions {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.todo-content .read {
+	font-size: 1rem;
+	font-weight: normal;
+}
+
+.todo-content li {
+	display: flex;
+	gap: 0.5rem;
+	align-items: flex-start;
+}
+
+.todo-content input[type='checkbox'] {
+	display: inline-block;
+	justify-self: center;
+	margin: auto 1rem auto 0;
+	padding: 2rem;
+}
+
+.todo-content input[type='checkbox']:checked + label{
+    text-decoration: line-through;
+}
+
+.todo-content {
+	font-size: 1.5rem;
+	font-weight: 500;
+	max-height: 480px;
+}
+
+.todo-content a {
+	color: white;
+}
+
+.todo-content i {
+	float: right;
+	font-size: 20px;
+	padding-top: 0.5rem;
+}
+
+.todo-box ul {
+	margin: 0 auto;
+	width: 60%;
+}
+
+.todo-box ul li {
+	padding-top: 1.25rem;
+}
+
+.todo-content .del-icon {
+	display: block;
+	justify-self: flex-end;
+	align-items: flex-end;
+}
+
+.button1 {
+	font-family: 'sans-serif';
+	background-color: #ece5f0;
+	border: none;
+	font-weight: bolder;
+	padding: 20px;
+	cursor: pointer;
+	border-radius: 6px;
+}
+
+.success {
+	padding-right: 3px;
+	width: 35px;
+	height: 35px;
+	border: 2px solid #49b44d;
+	color: #49b44d;
+}
+
+.success:hover {
+	background-color: #49b44d;
+	color: aliceblue;
+}
+
+.fail {
+	padding-right: 3px;
+	width: 35px;
+	height: 35px;
+	border: 2px solid red;
+	color: red;
+}
+
+.fail:hover {
+	background-color: red;
+	color: aliceblue;
+}
+
+.retry {
+	padding-right: 3px;
+	width: 35px;
+	height: 35px;
+	border: 2px solid goldenrod;
+	color: goldenrod;
+}
+
+.retry:hover {
+	background-color: goldenrod;
+	color: aliceblue;
+}
+
+
+
+@media (max-width: 943px) {
+	.todo-box ul {
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	.todo-box {
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	
+}
+
+@media(max-width:513px){
+	.todo-box {
+		margin: 0 auto;
+		width: 145%;
+	}
+	.edit_todo_name{
+
+		width: 80px;
+		
+	}
+	
+}
+
+/* editable name ki styling */
+.edit_todo_name, .edit_todo_name_button{
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+/* agr readonly ni rahega to text pink me display hoga */
+.edit_todo_name:not(:read-only){
+    color: pink;
+}
+
+.edit_todo_name{
+    color:#ece5f0;
+	font-size: 22px;
+	padding-left: 20px;
+	padding-bottom: 5px;
+	font-family: 'papyrus';
+	font-weight: bolder;
+}
+
+.show-add-new-task{
+    display: flex;
+    justify-content: center;
+    margin-top: 100%;
+}
+
+.add-new-task{
+	color: aliceblue;
+    width: 350px;
+    background-color: black;
+    padding: 30px 20px;
+    position: absolute;
+    left: 50%;
+    top: -200%;
+    transform: translate(-50%, +50%);
+    box-shadow: 0px 0px 10px 3px #ccc;
+    transition: 1s;
+}
+
+.add-new-task input{
+    width: 100%;
+    height: 35px;
+    margin-bottom: 15px;
+}
+
+.add-new-task button{
+    background-color: white;
+    padding: 10px 15px;
+}
+
+.add-new-task span{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: green;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    color: white;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.btn-add-new{
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: white;
+    /* color: white; */
+}
+
+.hide{
+    display: none;
+}
+
+.todo-actions{
+	padding-bottom: 20px;
+}
+

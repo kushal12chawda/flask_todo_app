@@ -1,0 +1,31 @@
+# Flask and its dependencies
+Flask==2.0.1
+Werkzeug==2.0.1
+Flask-SQLAlchemy
+Flask-Bcrypt==1.0.1
+
+# Database integration
+SQLAlchemy==1.4.23
+
+# Forms and validation
+WTForms==2.3.3
+
+# Templates
+Jinja2==3.0.1
+
+# User authentication
+Flask-Login==0.5.0
+
+# Session management (optional, include if required)
+Flask-Session==0.4.0
+
+# File uploads (optional, include if required)
+Flask-Uploads==0.2.1
+
+
+# Api
+Flask-RESTful
+
+DateTime==5.1
+
+
